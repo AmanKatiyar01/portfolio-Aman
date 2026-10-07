@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;900&display=swap');
+
+:root {
+  --bg-color: #000000; 
+  --text-main: #ffffff;
+  --text-muted: #8b9bb4;
+  --nav-bg: rgba(5, 5, 5, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* =========================================
+   NAVBAR & MULTI-COLOR LINKS
+========================================= */
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 12px 35px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 1000;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  width: max-content;
+  max-width: 95%;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+/* Har Section Ke Liye Alag Color (Jaise aapne bataya) */
+.nav-links li:nth-child(1) a:hover, .nav-links li:nth-child(1) a.active { color: #00f2fe; text-shadow: 0 0 15px rgba(0,242,254,0.6); } /* Home - Cyan */
+.nav-links li:nth-child(2) a:hover, .nav-links li:nth-child(2) a.active { color: #ff758c; text-shadow: 0 0 15px rgba(255,117,140,0.6); } /* About - Pink */
+.nav-links li:nth-child(3) a:hover, .nav-links li:nth-child(3) a.active { color: #2af598; text-shadow: 0 0 15px rgba(42,245,152,0.6); } /* Skills - Green */
+.nav-links li:nth-child(4) a:hover, .nav-links li:nth-child(4) a.active { color: #f9d423; text-shadow: 0 0 15px rgba(249,212,35,0.6); } /* Projects - Yellow */
+.nav-links li:nth-child(5) a:hover, .nav-links li:nth-child(5) a.active { color: #b721ff; text-shadow: 0 0 15px rgba(183,33,255,0.6); } /* Education - Purple */
+.nav-links li:nth-child(6) a:hover, .nav-links li:nth-child(6) a.active { color: #ff4e50; text-shadow: 0 0 15px rgba(255,78,80,0.6); } /* Contact - Red */
+
+/* =========================================
+   COLORFUL TEXT GRADIENTS ("Hi, I'm" aur Naam ke liye)
+========================================= */
+.text-gradient-1 {
+  background: linear-gradient(90deg, #ff9a9e, #fecfef, #fbc2eb);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  display: inline-block;
+}
+
+.text-gradient-2 {
+  background: linear-gradient(90deg, #00f2fe, #4facfe, #2af598, #00f2fe);
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  display: inline-block;
+  background-size: 300% auto;
+  animation: shineAnimated 4s linear infinite;
+  filter: drop-shadow(0px 0px 15px rgba(0, 242, 254, 0.5));
+}
+
+@keyframes shineAnimated {
+  0% { background-position: 0% center; }
+  100% { background-position: 300% center; }
+}
+
+/* =========================================
+   BUTTONS & BADGE (Unchanged, already premium)
+========================================= */
+.btn-container { display: flex; gap: 1.2rem; margin-top: 2rem; flex-wrap: wrap; }
+.btn { padding: 12px 30px; border-radius: 50px; font-weight: 600; font-size: 1rem; text-decoration: none; transition: all 0.4s; display: inline-flex; align-items: center; justify-content: center; position: relative; z-index: 2; }
+.btn-glow { background: linear-gradient(90deg, #4facfe, #00f2fe); color: #000 !important; border: none; box-shadow: 0 0 20px rgba(0, 242, 254, 0.4); }
+.btn-glow:hover { box-shadow: 0 0 40px rgba(0, 242, 254, 0.7); transform: translateY(-4px) scale(1.03); }
+.btn-outline { background: rgba(255, 255, 255, 0.03); color: var(--text-main) !important; border: 1px solid rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px); }
+.btn-outline:hover { border-color: #00f2fe; color: #00f2fe !important; box-shadow: 0 0 20px rgba(0, 242, 254, 0.15); transform: translateY(-4px); }
+
+.status-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; background: rgba(0, 242, 254, 0.05); border: 1px solid rgba(0, 242, 254, 0.2); border-radius: 50px; color: #00f2fe; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem; }
+.status-dot { width: 8px; height: 8px; background-color: #00f2fe; border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0%, 100% { transform: scale(0.8); opacity: 0.5; } 50% { transform: scale(1.2); opacity: 1; } }
+
+/* =========================================
+   PHOTO FRAME
+========================================= */
+.profile-wrapper { position: relative; width: 100%; max-width: 380px; aspect-ratio: 4/5; border-radius: 30px; padding: 3px; background: linear-gradient(135deg, rgba(0, 242, 254, 0.5), rgba(79, 172, 254, 0.1)); box-shadow: 0 20px 50px rgba(0, 242, 254, 0.15); animation: float 6s ease-in-out infinite; }
+.profile-inner { width: 100%; height: 100%; background: #050505; border-radius: 28px; overflow: hidden; }
+.profile-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.profile-wrapper:hover .profile-img { transform: scale(1.05); }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+.container { max-width: 1200px; margin: 0 auto; padding: 8rem 2rem 4rem 2rem; position: relative; z-index: 10; }
+@media (max-width: 768px) {
+  .navbar { padding: 10px 20px; border-radius: 20px; }
+  .nav-links { gap: 1rem; }
+  .nav-links a { font-size: 0.75rem; }
+  .container { padding: 7rem 1.5rem 3rem 1.5rem; text-align: center; }
+  .hero-content { align-items: center !important; }
+  .btn-container { justify-content: center; width: 100%; }
+  .status-badge { margin: 0 auto 1.5rem auto; }
+}
+/* =========================================
+   ADVANCE BENTO GRID & ABOUT SECTION
+========================================= */
+.about-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 8rem;
+  min-height: 100vh;
+}
+
+/* Background Glowing Orbs */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  z-index: -1;
+  animation: floatOrb 8s infinite alternate ease-in-out;
+  opacity: 0.5;
+}
+.orb-cyan { width: 30vw; height: 30vw; background: rgba(0, 242, 254, 0.15); top: 10%; left: 0%; }
+.orb-pink { width: 25vw; height: 25vw; background: rgba(255, 117, 140, 0.1); bottom: 10%; right: 5%; }
+.orb-yellow { width: 20vw; height: 20vw; background: rgba(249, 212, 35, 0.1); top: 40%; left: 50%; transform: translateX(-50%); }
+
+@keyframes floatOrb {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-40px) scale(1.1); }
+}
+
+/* Bento Grid Layout */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================================
+   ADVANCE BENTO GRID & ABOUT SECTION (PRO LEVEL)
+========================================= */
+.about-section {
+  position: relative;
+  z-index: 1;
+  padding-top: 8rem;
+  min-height: 100vh;
+}
+
+/* Background Glowing Orbs */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+  animation: floatOrb 8s infinite alternate ease-in-out;
+  opacity: 0.4;
+}
+.orb-cyan { width: 30vw; height: 30vw; background: #00f2fe; top: 10%; left: -5%; }
+.orb-pink { width: 25vw; height: 25vw; background: #ff758c; bottom: 10%; right: 0%; }
+.orb-yellow { width: 20vw; height: 20vw; background: #f9d423; top: 40%; left: 50%; transform: translateX(-50%); }
+
+@keyframes floatOrb {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-50px) scale(1.15); }
+}
+
+/* Bento Grid Layout */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Ultra Glass Card with Inner Glow */
+.bento-card {
+  background: rgba(10, 10, 15, 0.6);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: inset 0 0 20px rgba(255,255,255,0.02), 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.bento-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 30px rgba(255,255,255,0.05), 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* Individual Card Hover Glows */
+.bento-card.cyan-glow:hover { border-color: #00f2fe; box-shadow: inset 0 0 20px rgba(0,242,254,0.1), 0 20px 40px rgba(0,242,254,0.15); }
+.bento-card.pink-glow:hover { border-color: #ff758c; box-shadow: inset 0 0 20px rgba(255,117,140,0.1), 0 20px 40px rgba(255,117,140,0.15); }
+.bento-card.green-glow:hover { border-color: #2af598; box-shadow: inset 0 0 20px rgba(42,245,152,0.1), 0 20px 40px rgba(42,245,152,0.15); }
+.bento-card.yellow-glow:hover { border-color: #f9d423; box-shadow: inset 0 0 20px rgba(249,212,35,0.1), 0 20px 40px rgba(249,212,35,0.15); }
+
+/* Card Inner Text Gradients */
+/* Card Inner Text Gradients - Error Fixed */
+.card-title-cyan { 
+  background: linear-gradient(90deg, #00f2fe, #4facfe); 
+  -webkit-background-clip: text; 
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; 
+  filter: drop-shadow(0 0 8px rgba(0,242,254,0.4)); 
+}
+
+.card-title-pink { 
+  background: linear-gradient(90deg, #ff758c, #ff7eb3); 
+  -webkit-background-clip: text; 
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; 
+  filter: drop-shadow(0 0 8px rgba(255,117,140,0.4)); 
+}
+
+.card-title-green { 
+  background: linear-gradient(90deg, #2af598, #009efd); 
+  -webkit-background-clip: text; 
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; 
+  filter: drop-shadow(0 0 8px rgba(42,245,152,0.4)); 
+}
+
+.card-title-yellow { 
+  background: linear-gradient(90deg, #f9d423, #ff4e50); 
+  -webkit-background-clip: text; 
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent; 
+  filter: drop-shadow(0 0 8px rgba(249,212,35,0.4)); 
+}
+
+
+/* Wide Cards */
+@media (min-width: 900px) { .bento-wide { grid-column: span 2; } }
+
+.cert-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  margin-bottom: 12px;
+}
+
+.cert-link:hover {
+  background: rgba(249, 212, 35, 0.1);
+  border-color: rgba(249, 212, 35, 0.4);
+  transform: translateX(8px);
+  box-shadow: 0 5px 15px rgba(249, 212, 35, 0.2);
+}
