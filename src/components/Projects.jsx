@@ -11,7 +11,7 @@ const myProjects = [
     description: "An intelligent AI-powered application that deeply analyzes resumes against job descriptions, extracts core skills, and calculates accurate ATS match scores using advanced NLP models.",
     tech: ["React.js", "Node.js", "Python", "AI/NLP"],
     link: "https://ai-resume-analyzer-eight-alpha.vercel.app/", 
-    github: "https://github.com/AmanKatiyar01", // Yahan apne project ke github ka link daal dena
+    github: "https://github.com/AmanKatiyar01", 
     glowColor: "#00f2fe" // Cyan Neon Glow
   },
   {
@@ -22,6 +22,15 @@ const myProjects = [
     link: "https://your-nxtbuild-link.com", 
     github: "https://github.com/AmanKatiyar01", 
     glowColor: "#f9d423" // Yellow Neon Glow
+  },
+  {
+    id: "edureach",
+    title: "EduReach Platform",
+    description: "A comprehensive educational platform designed to streamline learning and connect students with valuable resources. Built with a modern UI and seamless user experience.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+    link: "https://edureach-platform-niun.vercel.app",
+    github: "https://github.com/AmanKatiyar01",
+    glowColor: "#2af598" // Green Neon Glow
   }
 ];
 
@@ -70,7 +79,6 @@ function Projects() {
               overflow: 'hidden',
               transition: 'all 0.4s ease'
             }}
-            // Hover karne par card ka glow project ke color ka ho jayega
             onMouseEnter={(e) => {
               e.currentTarget.style.borderColor = project.glowColor;
               e.currentTarget.style.boxShadow = `inset 0 0 30px ${project.glowColor}22, 0 25px 50px rgba(0,0,0,0.6)`;
@@ -99,7 +107,8 @@ function Projects() {
 
             {/* Tech Stack Glowing Tags */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '2.5rem' }}>
-              {project.tech.map((tech, i) => (
+              {/* Optional chaining applied here with question mark */}
+              {project.tech?.map((tech, i) => (
                 <span 
                   key={i} 
                   style={{ 
