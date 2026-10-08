@@ -5,14 +5,13 @@ function Contact() {
   const contactInfo = {
     email: "skatiyar558@gmail.com",
     phone: "+91 9555386897",
-    location: "Mohammadapur, Lakhimpur Kheri, UP",
+    location: "Mohammadapur, Lakhimpur Kheri, Uttar pradesh",
     linkedin: "https://linkedin.com/in/aman-katiyar01",
     github: "https://github.com/AmanKatiyar01"
   };
 
   return (
-    <div className="container about-section" style={{ minHeight: '100vh', paddingTop: '8rem', paddingBottom: '5rem', position: 'relative' }}>
-      
+      <div id="contact" className="container about-section" style={{ minHeight: '100vh', paddingTop: '8rem', paddingBottom: '5rem', position: 'relative' }}>
       {/* Dynamic Background Orbs */}
       <div className="bg-orb orb-cyan" style={{ top: '15%', left: '10%', width: '35vw', height: '35vw', opacity: 0.25 }}></div>
       <div className="bg-orb orb-pink" style={{ bottom: '15%', right: '10%', width: '30vw', height: '30vw', opacity: 0.2 }}></div>

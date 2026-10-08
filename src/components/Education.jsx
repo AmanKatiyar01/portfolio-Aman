@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { FiAward, FiBookOpen, FiBookmark, FiCalendar, FiCheckCircle, FiClock, FiTarget } from "react-icons/fi";
 
 // =========================================================
-// 🚀 ADVANCED EDUCATION DATA
+// 🚀 ADVANCED EDUCATION DATA (ORIGINAL)
 // =========================================================
 const educationData = [
   {
@@ -10,7 +10,7 @@ const educationData = [
     type: "Undergraduate Degree",
     degree: "B.Tech – Computer Science & Engineering",
     year: "2023 - 2027",
-    score: "CGPA: 7.0",
+    
     institution: "Bansal Institute of Engineering and Technology, Lucknow",
     university: "Affiliated to Dr. A. P. J. Abdul Kalam Technical University",
     status: "Pursuing",
@@ -23,7 +23,7 @@ const educationData = [
     type: "Intermediate",
     degree: "12th Standard",
     year: "2023",
-    score: "",
+    
     institution: "Higher Secondary Education",
     university: "",
     status: "Completed",
@@ -36,7 +36,7 @@ const educationData = [
     type: "High School",
     degree: "10th Standard",
     year: "2021",
-    score: "",
+    
     institution: "Secondary Education",
     university: "",
     status: "Completed",
@@ -148,7 +148,7 @@ function Education() {
                   </p>
                 )}
 
-                {/* Highlighted CGPA Box (Only shows if score exists) */}
+                {/* Highlighted Score/CGPA Box */}
                 {edu.score && (
                   <div style={{ display: 'inline-block', marginTop: '0.5rem' }}>
                     <div style={{ 

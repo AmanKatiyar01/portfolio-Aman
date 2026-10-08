@@ -13,21 +13,21 @@ const mySkills = [
     cert: "Certification",
     icon: <FaPython size={46} color="#f9d423" />, 
     hoverColor: "#f9d423",
-    link: "/python-certificate.pdf" // Example: Place python-certificate.pdf in public folder
+    link: "/python-cert.pdf" // Example: Place python-certificate.pdf in public folder
   },
   { 
     title: "Web Development", 
     cert: "Certification (HTML, CSS, JavaScript)",
     icon: <FaCode size={46} color="#ff758c" />, 
     hoverColor: "#ff758c",
-    link: "/web-dev-certificate.pdf"
+    link: "/html-cert.pdf"
   },
   { 
     title: "React.js", 
     cert: "Certification",
     icon: <FaReact size={46} color="#00f2fe" />, 
     hoverColor: "#00f2fe",
-    link: "/react-certificate.pdf"
+    link: "/react-cert.pdf"
   },
   { 
     title: "Node.js & Express.js", 
@@ -41,14 +41,13 @@ const mySkills = [
     cert: "Certification",
     icon: <FaDatabase size={46} color="#b19fff" />, 
     hoverColor: "#b19fff",
-    link: "/sql-certificate.pdf"
+    link: "/sql-cert.pdf"
   }
 ];
 
 function Skills() {
   return (
-    <div className="container about-section" style={{ minHeight: '100vh', paddingTop: '8rem' }}>
-      
+      <div id="skills" className="container about-section" style={{ minHeight: '100vh', paddingTop: '8rem' }}>
       {/* Background Glowing Orbs for 3D Feel */}
       <div className="bg-orb orb-cyan" style={{ top: '20%', left: '10%' }}></div>
       <div className="bg-orb orb-pink" style={{ bottom: '20%', right: '10%' }}></div>

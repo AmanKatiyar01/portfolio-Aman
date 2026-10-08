@@ -27,7 +27,7 @@ const myProjects = [
 
 function Projects() {
   return (
-    <div className="container about-section" style={{ minHeight: '100vh', paddingTop: '8rem', paddingBottom: '5rem', position: 'relative' }}>
+    <div id="projects" className="container about-section" style={{ minHeight: '100vh', paddingTop: '8rem', paddingBottom: '5rem', position: 'relative' }}>
       
       {/* Background Glowing Orbs for 3D Feel */}
       <div className="bg-orb orb-cyan" style={{ top: '15%', left: '0%', width: '30vw', height: '30vw', opacity: 0.3 }}></div>

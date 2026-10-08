@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
-import { FiDownload, FiMapPin, FiMail, FiPhone, FiBookOpen, FiAward, FiCheckCircle, FiExternalLink } from "react-icons/fi";
+import { FiDownload, FiMapPin, FiMail, FiPhone, FiBookOpen, FiAward, FiCheckCircle } from "react-icons/fi";
 
 const myCertificates = [
-  { name: "IBM Full Stack Software Developer", link: "https://www.coursera.org/ibm-certificate-link" },
-  { name: "Python Programming Certification", link: "https://your-python-certificate-link.com" },
-  { name: "SQL & Database Architecture", link: "https://your-sql-link.com" },
-  { name: "Advanced React.js & Node.js", link: "#" },
-  { name: "Web Development Bootcamp", link: "#" }
+  { name: "IBM Full Stack Software Developer" },
+  { name: "Python Programming Certification" },
+  { name: "SQL & Database Architecture" },
+  { name: "Advanced React.js & Node.js" },
+  { name: "Web Development Bootcamp" }
 ];
 
 function About() {
   return (
-    <div className="container about-section">
+     <div id="about" className="container about-section">
       
       {/* Background Orbs for 3D Depth */}
       <div className="bg-orb orb-cyan"></div>
@@ -118,20 +118,23 @@ function About() {
             
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px' }}>
               {myCertificates.map((cert, index) => (
-                <a 
+                // Yahan <a> tag ko hata kar <div> kar diya gaya hai
+                <div 
                   key={index} 
-                  href={cert.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="cert-link"
-                  style={{ cursor: cert.link === "#" ? 'default' : 'pointer' }}
+                  style={{ 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    gap: '12px',
+                    padding: '12px 16px',
+                    background: 'rgba(255,255,255,0.03)',
+                    borderRadius: '8px',
+                    border: '1px solid rgba(255,255,255,0.05)'
+                  }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <FiCheckCircle color="#f9d423" size={20} />
-                    <span style={{ color: '#e2e8f0', fontSize: '1.05rem', fontWeight: '500' }}>{cert.name}</span>
-                  </div>
-                  {cert.link !== "#" && <FiExternalLink color="#f9d423" size={18} opacity={0.8} />}
-                </a>
+                  <FiCheckCircle color="#f9d423" size={20} />
+                  <span style={{ color: '#e2e8f0', fontSize: '1.05rem', fontWeight: '500' }}>{cert.name}</span>
+                </div>
               ))}
             </div>
           </div>

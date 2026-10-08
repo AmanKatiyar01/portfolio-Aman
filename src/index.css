@@ -294,3 +294,31 @@ body {
   transform: translateX(8px);
   box-shadow: 0 5px 15px rgba(249, 212, 35, 0.2);
 }
+/* =========================================
+   RESPONSIVE NAVBAR (MOBILE & DESKTOP)
+========================================= */
+.desktop-nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 100;
+}
+
+/* Jab screen mobile ki ho (768px se choti) */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none; /* Laptop wale links chupa do */
+  }
+  
+  .mobile-menu-btn {
+    display: block; /* Mobile menu button dikhao */
+  }
+}
